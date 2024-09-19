@@ -42,6 +42,10 @@ ifeq ($(OPTION), MYD-YA157C)
 SUBDIRS=framebuffer keypad rtc eeprom led can rs232 rs485 gpio watchdog
 endif
 
+ifeq ($(OPTION), MYD-LR3576)
+SUBDIRS=rtc eeprom led can rs232 rs485 gpio watchdog
+endif
+
 all: $(SUBDIRS)
 
 $(SUBDIRS):
