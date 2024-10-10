@@ -61,6 +61,10 @@ ifeq ($(OPTION), MYD-C437X-PRU)
 	cp pru_led/PRU_RPMsg_Echo_Interrupt0_0/gen/PRU_RPMsg_Echo_Interrupt0_0.out  $(PREFIX)/lib/firmware/am437x-pru0_0-fw
 	cp pru_led/PRU_RPMsg_LED0_1/gen/PRU_RPMsg_LED0_1.out  $(PREFIX)/lib/firmware/am437x-pru0_1-fw
 endif
+
+ifeq ($(OPTION), MYD-LR3576)
+	cp rs485/rs485_read rs485/rs485_write $(PREFIX)/usr/bin/
+endif
 	@for d in $(SUBDIRS); do (cd $$d; cp $$d"_test" $(PREFIX)/usr/bin/ ); done
 
 
